@@ -1,119 +1,59 @@
-/* HERO */
-.hero {
-  height: 100vh;
-  background: linear-gradient(135deg, #ff4ecd, #ff8fab, #ffc2d1);
-  background-size: 300% 300%;
-  animation: gradientMove 8s ease infinite;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 2rem;
-}
-
-.hero-content {
-  color: #fff;
-  max-width: 500px;
-  animation: fadeIn 1s ease-in-out;
-}
-
-.logo {
-  width: 150px;
-  margin-bottom: 1.5rem;
-}
-
-.hero h1 {
-  font-size: 2.6rem;
+.title {
   font-weight: bold;
-  margin-bottom: 1rem;
-
-  span {
-    display: block;
-    font-weight: 300;
-  }
+  letter-spacing: 1px;
 }
 
-.hero p {
-  font-size: 1.1rem;
-  margin-bottom: 2rem;
-  opacity: 0.95;
-}
-
-ion-button {
-  --background: #000;
-  --color: #fff;
-  --border-radius: 25px;
-  padding: 0 1.2rem;
-}
-
-/* CARDS */
-.highlights {
-  margin-top: -4rem;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.5rem;
-}
-
-.card {
-  background: #fff;
-  border-radius: 20px;
-  padding: 2rem 1.5rem;
+.hero {
+  background: linear-gradient(to right, #ff6a88, #ff99ac);
+  padding: 40px 20px;
+  border-radius: 0 0 30px 30px;
   text-align: center;
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
+  color: #fff;
 
-  ion-icon {
-    font-size: 2.5rem;
-    color: #ff4ecd;
-    margin-bottom: 0.8rem;
-  }
-
-  h3 {
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
+  h1 {
+    font-size: 26px;
+    margin-bottom: 10px;
   }
 
   p {
-    font-size: 0.95rem;
-    color: #666;
-  }
-
-  &:hover {
-    transform: translateY(-8px);
+    margin-bottom: 20px;
+    opacity: 0.9;
   }
 }
 
-/* ANIMATIONS */
-@keyframes gradientMove {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+.section-title {
+  margin: 20px;
+  font-weight: bold;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.categories {
+  display: flex;
+  gap: 15px;
+  padding: 0 15px 30px;
+  overflow-x: auto;
 }
 
-/* RESPONSIVE */
-@media (min-width: 768px) {
-  .highlights {
-    grid-template-columns: repeat(3, 1fr);
+.card {
+  min-width: 200px;
+  height: 260px;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
-  .hero h1 {
-    font-size: 3rem;
+  .overlay {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 15px;
+    background: rgba(0,0,0,0.4);
+    color: #fff;
+    text-align: center;
   }
 }

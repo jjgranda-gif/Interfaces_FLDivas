@@ -1,47 +1,31 @@
 <ion-header translucent>
-  <ion-toolbar>
-    <ion-title>FLDivas</ion-title>
+  <ion-toolbar color="light">
+    <ion-title class="title">FLDivas</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content fullscreen>
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-content">
-      <img src="assets/img/logo-fldivas.png" alt="FLDivas" class="logo" />
 
-      <h1>
-        Exprésate <span>con estilo</span>
-      </h1>
+  <!-- Banner -->
+  <div class="hero">
+    <h1>Moda que resalta tu esencia</h1>
+    <p>Nueva colección 2026</p>
+    <ion-button routerLink="/store" expand="block" color="dark">
+      Ir a la tienda
+    </ion-button>
+  </div>
 
-      <p>
-        Moda femenina pensada para mujeres seguras, auténticas y poderosas.
-      </p>
+  <!-- Categorías -->
+  <h2 class="section-title">Categorías destacadas</h2>
 
-      <ion-button shape="round" size="large" (click)="irStore()">
-        Explorar tienda
-      </ion-button>
+  <div class="categories">
+    <div class="card" *ngFor="let cat of categorias">
+      <img [src]="cat.imagen" />
+      <div class="overlay">
+        <h3>{{ cat.nombre }}</h3>
+      </div>
     </div>
-  </section>
+  </div>
 
-  <!-- INFO -->
-  <section class="highlights ion-padding">
-    <div class="card">
-      <ion-icon name="sparkles-outline"></ion-icon>
-      <h3>Diseño exclusivo</h3>
-      <p>Prendas únicas que elevan tu presencia.</p>
-    </div>
-
-    <div class="card">
-      <ion-icon name="trending-up-outline"></ion-icon>
-      <h3>Tendencia</h3>
-      <p>Lo último en moda femenina.</p>
-    </div>
-
-    <div class="card">
-      <ion-icon name="heart-outline"></ion-icon>
-      <h3>Calidad premium</h3>
-      <p>Comodidad y elegancia en cada detalle.</p>
-    </div>
-  </section>
 </ion-content>
+
