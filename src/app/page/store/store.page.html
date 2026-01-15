@@ -1,27 +1,34 @@
-<ion-header>
+<ion-header translucent>
   <ion-toolbar color="light">
+    <ion-title>Tienda</ion-title>
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/inicio"></ion-back-button>
     </ion-buttons>
-    <ion-title>Tienda</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content fullscreen class="ion-padding">
+  <div class="store-hero">
+    <h1>FLDivas Store</h1>
+    <p>Moda que resalta tu poder 💃</p>
+  </div>
 
   <div class="products">
-    <ion-card *ngFor="let p of productos">
-      <img [src]="p.imagen" />
+    <ion-card class="product-card" *ngFor="let producto of productos">
+      <img [src]="producto.imagen" [alt]="producto.nombre" />
+
       <ion-card-header>
-        <ion-card-title>{{ p.nombre }}</ion-card-title>
-        <ion-card-subtitle>${{ p.precio }}</ion-card-subtitle>
+        <ion-card-title>{{ producto.nombre }}</ion-card-title>
+        <ion-card-subtitle>{{ producto.precio | currency:'USD' }}</ion-card-subtitle>
       </ion-card-header>
+
       <ion-card-content>
-        <ion-button expand="block" color="danger">
-          Agregar al carrito
+        <p>{{ producto.descripcion }}</p>
+
+        <ion-button expand="block" shape="round" (click)="verProducto(producto)">
+          Comprar
         </ion-button>
       </ion-card-content>
     </ion-card>
   </div>
-
 </ion-content>

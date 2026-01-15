@@ -1,34 +1,57 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
-import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-store',
   standalone: true,
-  imports: [IonicModule, RouterModule],
+  imports: [CommonModule, IonicModule],
   templateUrl: './store.page.html',
-  styleUrls: ['./store.page.scss']
+  styleUrls: ['./store.page.scss'],
 })
 export class StorePage {
 
   productos = [
     {
-      nombre: 'Vestido Floral',
-      precio: 39.99,
-      imagen: 'https://images.unsplash.com/photo-1490481651871-ab68de25d43d'
+      nombre: 'Vestido Diva',
+      precio: 45,
+      descripcion: 'Vestido elegante ideal para cualquier ocasión.',
+      imagen: 'assets/img/vestido1.jpg',
     },
     {
-      nombre: 'Chaqueta Denim',
-      precio: 59.99,
-      imagen: 'https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f'
+      nombre: 'Blusa Glam',
+      precio: 28,
+      descripcion: 'Blusa moderna con diseño exclusivo.',
+      imagen: 'assets/img/blusa1.jpg',
     },
     {
-      nombre: 'Bolso Elegante',
-      precio: 29.99,
-      imagen: 'https://images.unsplash.com/photo-1548036328-c9fa89d128fa'
-    }
+      nombre: 'Conjunto Chic',
+      precio: 55,
+      descripcion: 'Conjunto cómodo y sofisticado.',
+      imagen: 'assets/img/conjunto1.jpg',
+    },
+    {
+      nombre: 'Falda Trendy',
+      precio: 32,
+      descripcion: 'Falda versátil y a la moda.',
+      imagen: 'assets/img/falda1.jpg',
+    },
+    {
+      nombre: 'Chaqueta Urban',
+      precio: 60,
+      descripcion: 'Perfecta para un look urbano y moderno.',
+      imagen: 'assets/img/chaqueta1.jpg',
+    },
+    {
+      nombre: 'Top Fashion',
+      precio: 22,
+      descripcion: 'Ideal para combinar con cualquier outfit.',
+      imagen: 'assets/img/top1.jpg',
+    },
   ];
 
+  verProducto(producto: any) {
+    console.log('Producto seleccionado:', producto);
+    // Aquí luego puedes navegar a detalle o carrito
+  }
 }
-
-
